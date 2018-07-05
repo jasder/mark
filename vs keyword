@@ -1,0 +1,30 @@
+第一个是自带的ctrl+d，这个太无敌了，按一次是选中当前单词，当两次就是将下一次出现的地方也选中，你选中之后可以直接复制
+
+
+https://blog.csdn.net/u010019717/article/details/50443970
+
+
+选中一行是 ctrl +i
+
+跳转到行数，也可以Ctrl+G直接进入
+
+文件之间切换 Ctrl+Tab
+左中右3个编辑器的快捷键Ctrl+1 Ctrl+2 Ctrl+3
+3个编辑器之间循环切换 Ctrl+`
+编辑器换位置，Ctrl+k然后按Left或Right
+选择从光标到行尾Shift+End
+选择从行首到光标处Shift+Home
+删除光标右侧的所有字Ctrl+Delete
+
+
+重构代码
+找到所有的引用：Shift+F12
+同时修改本文件中所有匹配的：Ctrl+F12
+重命名：比如要修改一个方法名，可以选中后按F2，输入新的名字，回车，会发现所有的文件都修改过了。
+跳转到下一个Error或Warning：当有多个错误时可以按F8逐个跳转
+查看diff 在explorer里选择文件右键 Set file to compare，然后需要对比的文件上右键选择Compare with 'file_name_you_chose'.
+
+
+@ 跳转到symbol（搜索变量或者函数），也可以Ctrl+Shift+O直接进入
+@:根据分类跳转symbol，查找属性或函数，也可以Ctrl+Shift+O后输入:进入
+# 根据名字查找symbol，也可以Ctrl+T

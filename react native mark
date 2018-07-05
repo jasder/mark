@@ -1,0 +1,113 @@
+create-react-native-app 介绍：
+
+
+	,扫描二维码就可以看到效果了。而这时候项目目录结构只有“node_modules”，和几个简单的文件，你这时候执行“react-native run-ios/android”是没有用的。以上的步骤都是为了快速开始一个react native项目，快速看到效果的方法，要想最后将项目发布，还是需要react native项目结构，请继续看：
+
+如果想转换成react native项目目录结构，在以上步骤的命令基础之上执行：
+
+npm run eject
+
+
+React Native 启动遇到的错误
+	1. 报错：unable to load script from assets 'index.android.bundle'.Make sure your bundle ispackged correctly or you are running a packger server.
+
+	解决办法： 
+		a、进入\android\app\src\main 新建assets文件夹
+			mkdir assets
+		b、修改entry–file  项目根目录运行命令：
+			react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+		c、重新运行 react-native run-android
+
+	参考链接：https://blog.csdn.net/Wbiokr/article/details/78887790
+
+	2. react-native  run-android 启动后，genymotion 一直显示连接，卡着不动；解决方法：
+		ctrl + M 进入选择Dev Settings，点击Dubug server host & port for device，设置IP和端口（正在运行packager的电脑的局域网IP，端口为8081，注意这时候电脑和手机要在同一网段内）。
+
+
+
+sublime text3 react native plugin:
+	1. Babel	
+		支持ES6， React.js, jsx代码高亮
+		https://github.com/babel/babel-sublime
+		打开.js, .jsx 后缀的文件后，点击菜单View -> Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)
+	2. Babel-Snippets
+		参考链接：https://github.com/babel/babel-sublime
+	３．JsFormat
+		暂未安装　可设置保存文件时自动格式化
+		设置如下：打开preferences -> Package Settings -> JsFormat -> Setting - Users,输入以下代码：
+		{
+		  "e4x": true,
+		  // jsformat options
+		 
+		  "format_on_save": true,
+		}
+	４．Terminal　终端（可选）
+
+
+
+ES６/7语法使用：
+	参考链接　https://blog.csdn.net/wxq888/article/details/52424946
+					https://imququ.com/post/arrow-function-in-es6.html
+
+	var array = [1, 2, 3];
+	//传统写法
+	array.forEach(function(v, i, a) {
+	    console.log(v);
+	});
+	//ES6
+	array.forEach(v = > console.log(v));
+	var sum = (num1, num2) => { return num1 + num2; }
+	//等同于：
+	var sum = function(num1, num2) {
+	    return num1 + num2;
+	 };
+
+如何在通过react-native init 生成的项目中结合使用expo
+	清楚缓存：
+	rm -rf node_modules
+	rm -rf /tmp/metro-cache-*
+
+	1. 首先要安装exp命令行工具
+		npm install -g exp  
+	2. 在react-native init 生成的项目中添加expo依赖包
+		yarn add expo
+		请注意，安装expo成功后，会在该项目下生产.expo文件夹，该文件夹不需要提交到版本库
+		安装成功后，同时需要需改app.json文件，参考　
+		https://docs.expo.io/versions/v28.0.0/workflow/configuration
+	3. 安装准备工作做好以后，exp　start启动后遇到的问题点如下
+		问题１：[15:09:17] Warning: Not using the Expo fork of react-native. See https://docs.expo.io/.
+		这个问题有可能会导致在手机端的app上ｂｕｉｌｄｉｎｇ　js出错，原因就是加载不到react-native包，只需要将package.json
+		中的 "react-native": "0.55.4", 替换成"react-native": "https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz",
+		(如果在手机的并没有报错的话，那就不需要替换)
+	4. 以上步骤完成后，exp start命令启动项目，会以node_modules/expo/AppEntry.js文件作为入口,所以要在项目的package.json文件中头部添加如下代码
+		"main": "node_modules/expo/AppEntry.js",
+
+react native 结合graghql案例
+	参考  https://juejin.im/entry/5a0a4ea351882578da0d60c5
+		　　https://github.com/entronad/gitview/blob/master/App.js
+
+
+react native redux
+ 	参考　　https://www.jianshu.com/p/37428d579cf6
+ 				http://cn.redux.js.org/docs/react-redux/api.html
+				https://www.jianshu.com/p/466639774e01
+				https://github.com/NextChampion/react-native-redux-navigation-example
+				https://www.jianshu.com/p/8fb7df931eea
+				http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html
+				https://segmentfault.com/a/1190000013428884#articleHeader14
+				https://www.jianshu.com/p/3334467e4b32
+
+react native redux 结合redux-persist做持久化，比如说，用户的登录信息等
+	参考　https://github.com/xiaogliu/react_native_complete_demo
+
+react native redux 中间件redux-thunk
+	参考　https://blog.csdn.net/kuangshp128/article/details/67632683
+
+react native  导航
+	插件 react-navigation  react-native-router-flux
+	参考 https://www.ctolib.com/guangqiang-liu-react-native-routerFluxDemo.html
+
+
+
+app icon
+	链接 http://iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=8928
