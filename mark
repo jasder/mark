@@ -1,0 +1,765 @@
+  kcptun-linux-amd64-20170120/client_linux_amd64 -r "52.14.179.114:4000" -l ":8123" -mode fast2
+
+
+  sslocal -c config.json
+
+
+ubuntu系统通过VirtualBox VMS 安装windows(安装win7)系统
+参考文件：https://blog.csdn.net/sunyao_123/article/details/78203595
+ https://blog.csdn.net/bitcarmanlee/article/details/53036809
+
+mark: 配置共享文件夹需要注意的是，先要在虚拟机win7上安装增加功能
+
+将win7的虚拟机安装完毕，终于出来熟悉的windows桌面，激动得眼泪哗哗的，这个时候看到windows的感觉就好像看到了亲人一样，有种立马想用得飞起的冲动。 
+不过别着急，心急吃不了热豆腐，当你想使用熟悉的ctrl+c,ctrl+v在主机与虚拟机中进行复制粘贴时，发现不能啊有木有。而且虚拟机跟主机之间也没法传输文件有木有，所以接下来还要进行一些配置。 
+在配置之前，现需要安装增强功能。很简单，在虚拟机的菜单栏中选择->设备最下面的安装增强功能，xp里会自动安装，win7中可移动存储设备一栏中，会有个VirtualBox Guest Addtions文件，点击安装即可。
+
+
+WINEARCH=win32 WINEPREFIX=~/.wine32 winecfg
+
+
+Ubuntu中teminator的配置
+https://blog.csdn.net/xungjhj/article/details/69377812
+
+常用快捷键:
+
+  Tab               自动补全
+  Ctrl+a          光标移动到开始位置
+  Ctrl+e          光标移动到最末尾
+  Ctrl+k          删除此处至末尾的所有内容
+  Ctrl+u          删除此处至开始的所有内容
+  Ctrl+d          删除当前字符
+  Ctrl+h          删除当前字符前一个字符
+  Ctrl+w         删除此处到左边的单词
+  Ctrl+y          粘贴由Ctrl+u， Ctrl+d， Ctrl+w删除的单词
+  Ctrl+l           相当于clear，即清屏
+  Ctrl+r          查找历史命令
+  Ctrl+b          向回移动光标
+  Ctrl+f          向前移动光标
+  Ctrl+t          将光标位置的字符和前一个字符进行位置交换
+  Ctrl+&         恢复 ctrl+h 或者 ctrl+d 或者 ctrl+w 删除的内容
+  Ctrl+S         暂停屏幕输出
+  Ctrl+Q         继续屏幕输出
+  Ctrl+p         向上显示缓存命令
+  Ctrl+n         向下显示缓存命令
+  Ctrl+d         关闭终端
+  Ctrl+xx       在EOL和当前光标位置移动
+  Ctrl+x@     显示可能hostname补全
+  Ctrl+c         终止进程/命令
+
+ 	Shift+上或下             终端上下滚动
+  Shift+PgUp/PgDn   终端上下翻页滚动
+  Ctrl+Shift+n             新终端
+  alt+F2                        输入gnome-terminal打开终端
+  Shift+Ctrl+T             打开新的标签页
+  Shift+Ctrl+W           关闭标签页
+  Shift+Ctrl+C            复制
+  Shift+Ctrl+V            粘贴
+  Alt+数字                    切换至对应的标签页
+  Shift+Ctrl+N            打开新的终端窗口
+  Shift+Ctrl+Q            管壁终端窗口
+  F1                                打开帮助指南
+  F10                             激活菜单栏
+  F11                              全屏切换
+  Alt+F                         打开 “文件” 菜单（file）
+  Alt+E                         打开 “编辑” 菜单（edit）
+  Alt+V                         打开 “查看” 菜单（view）
+  Alt+S                         打开 “搜索” 菜单（search）
+  Ctrl+Left-Arrow     光标移动到上一个单词的词首
+  Ctrl+Right-Arrow   光标移动到下一个单词的词尾
+
+ 	Alt+T   打开 “终端” 菜单（terminal）
+  Alt+H   打开 “帮助” 菜单（help）
+
+	Shift+Ctrl+PgUp/PgDn   左移右移标签页
+ Ctrl+PgUp/PgDn              切换标签页
+
+ Shift + Ctrl + E  垂直分割窗口
+ Shift + Ctrl + Z  将某个窗最大化
+ Ctrl + Shift + O  水平分割终端
+ Ctrl + d          关闭某个终端
+
+         
+
+
+
+
+
+
+[global_config]
+	title_transmit_bg_color = "#d30102"
+	focus = system
+	suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+	[[default]]
+		palette = "#2d2d2d:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#d3d0c8:#747369:#f2777a:#99cc99:#ffcc66:#6699cc:#cc99cc:#66cccc:#f2f0ec"
+		background_color = "#2D2D2D"
+		background_image = None
+		background_darkness = 0.85
+		cursor_color = "#2D2D2D"
+		cursor_blink = True
+		foreground_color = "#EEE9E9"
+		use_system_font = False
+		font = Ubuntu Mono 13
+		copy_on_selection = True
+		show_titlebar = False
+[layouts]
+	[[default]]
+		[[[child1]]]
+		type = Terminal
+		parent = window0
+		profile = default
+	[[[window0]]]
+		type = Window
+		parent = ""
+[plugins]
+
+
+terminator defalut config
+
+[global_config]
+  title_transmit_bg_color = "#0aedc8"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    background_image = None
+    copy_on_selection = True
+    foreground_color = "#ffffff"
+    palette = "#000000:#aa0000:#00aa00:#aa5500:#0000aa:#aa00aa:#00aaaa:#aaaaaa:#555555:#ff5555:#55ff55:#ffff55:#5555ff:#ff55ff:#55ffff:#ffffff"
+
+
+
+
+
+
+Sublime Text 3 快捷键精华版
+
+
+
+Ctrl+Shift+P：打开命令面板
+Ctrl+P：搜索项目中的文件
+Ctrl+G：跳转到第几行
+Ctrl+W：关闭当前打开文件
+Ctrl+Shift+W：关闭所有打开文件
+Ctrl+Shift+V：粘贴并格式化
+Ctrl+D：选择单词，重复可增加选择下一个相同的单词
+Ctrl+L：选择行，重复可依次增加选择下一行
+Ctrl+Shift+L：选择多行
+Ctrl+Shift+Enter：在当前行前插入新行
+Ctrl+X：删除当前行
+Ctrl+M：跳转到对应括号
+Ctrl+U：软撤销，撤销光标位置
+Ctrl+J：选择标签内容
+Ctrl+F：查找内容
+Ctrl+Shift+F：查找并替换
+Ctrl+H：替换
+Ctrl+R：前往 method
+Ctrl+N：新建窗口
+Ctrl+K+B：开关侧栏
+Ctrl+Shift+M：选中当前括号内容，重复可选着括号本身
+Ctrl+F2：设置/删除标记
+Ctrl+/：注释当前行
+Ctrl+Shift+/：当前位置插入注释
+Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的
+Ctrl+Shift+A：选择当前标签前后，修改标签用的
+F11：全屏
+Shift+F11：全屏免打扰模式，只编辑当前文件
+Alt+F3：选择所有相同的词
+Alt+.：闭合标签
+Alt+Shift+数字：分屏显示
+Alt+数字：切换打开第N个文件
+Shift+右键拖动：光标多不，用来更改或插入列内容
+鼠标的前进后退键可切换Tab文件
+按Ctrl，依次点击或选取，可需要编辑的多个位置
+按Ctrl+Shift+上下键，可替换行
+
+选择类
+Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。
+
+Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。
+
+Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。
+
+Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。
+
+Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。
+
+Ctrl+M 光标移动至括号内结束或开始的位置。
+
+Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。
+
+Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。
+
+Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。
+
+Ctrl+Shift+] 选中代码，按下快捷键，展开代码。
+
+Ctrl+K+0 展开所有折叠代码。
+
+Ctrl+← 向左单位性地移动光标，快速移动光标。
+
+Ctrl+→ 向右单位性地移动光标，快速移动光标。
+
+shift+↑ 向上选中多行。
+
+shift+↓ 向下选中多行。
+
+Shift+← 向左选中文本。
+
+Shift+→ 向右选中文本。
+
+Ctrl+Shift+← 向左单位性地选中文本。
+
+Ctrl+Shift+→ 向右单位性地选中文本。
+
+Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。
+
+Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。
+
+Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。
+
+Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。
+
+编辑类
+Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。
+
+Ctrl+Shift+D 复制光标所在整行，插入到下一行。
+
+Tab 向右缩进。
+
+Shift+Tab 向左缩进。
+
+Ctrl+K+K 从光标处开始删除代码至行尾。
+
+Ctrl+Shift+K 删除整行。
+
+Ctrl+/ 注释单行。
+
+Ctrl+Shift+/ 注释多行。
+
+Ctrl+K+U 转换大写。
+
+Ctrl+K+L 转换小写。
+
+Ctrl+Z 撤销。
+
+Ctrl+Y 恢复撤销。
+
+Ctrl+U 软撤销，感觉和 Gtrl+Z 一样。
+
+Ctrl+F2 设置书签
+
+Ctrl+T 左右字母互换。
+
+F6 单词检测拼写
+
+搜索类
+Ctrl+F 打开底部搜索框，查找关键字。
+
+Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。
+
+Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。
+
+Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。
+
+Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。
+
+Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。
+
+Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。
+
+Esc 退出光标多行选择，退出搜索框，命令框等。
+
+显示类
+Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。
+
+Ctrl+PageDown 向左切换当前窗口的标签页。
+
+Ctrl+PageUp 向右切换当前窗口的标签页。
+
+Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字）
+
+Alt+Shift+2 左右分屏-2列
+
+Alt+Shift+3 左右分屏-3列
+
+Alt+Shift+4 左右分屏-4列
+
+Alt+Shift+5 等分4屏
+
+Alt+Shift+8 垂直分屏-2屏
+
+Alt+Shift+9 垂直分屏-3屏
+
+Ctrl+K+B 开启/关闭侧边栏。
+
+F11 全屏模式
+
+Shift+F11 免打扰模式
+
+update
+
+Ctrl+k+2 折叠注释和方法
+
+Ctrl+k+3 折叠if
+
+Ctrl+k+4 折叠switch
+
+
+
+sublime插件推荐:
+
+1. 小程序插件:https://github.com/springlong/Sublime-wxapp
+2. 主题:https://github.com/ihodev/sublime-boxy,配置如下:
+	
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"theme_accent_numix": true,
+	"theme_autocomplete_item_selected_colored": true,
+	"theme_dropdown_atomized": true,
+	"theme_find_panel_materialized": true,
+	"theme_grid_border_size_xs": true,
+	"theme_popup_border_visible": true,
+	"theme_quick_panel_border_visible": true,
+	"theme_quick_panel_item_selected_colored": true,
+	"theme_scrollbar_colored": true,
+	"theme_scrollbar_line": true,
+	"theme_sidebar_disclosure": true,
+	"theme_tab_selected_transparent": true,
+	"theme_tab_selected_underlined": true,
+	"theme_tab_size_lg": true,
+	"theme_unified": true,
+
+	另外一个主题:https://github.com/dempfi/ayu
+
+3. 插件介绍:https://www.youtube.com/watch?v=NrYzJz1P4fE
+
+4. a file icon
+
+
+
+
+-----------------------------------------------------------------------------------------
+
+Ubuntu 16.04添加开机启动脚本的方法
+
+1. 建个脚本文件new_service.sh, 内容如下:
+
+#!/bin/sh -e
+#
+#
+# 开机自启动脚本
+#
+# 启动terminator
+/usr/bin/terminator
+
+# 启动vpn
+sslocal -c config.json
+kcptun-linux-amd64-20170120/client_linux_amd64 -r "52.14.179.114:4000" -l ":8123" -mode fast2
+
+# 启动 googel-chrome
+/usr/bin/google-chrome
+
+exit 0
+
+2. 设置权限
+sudo chmod 755 new_service.sh  
+
+3. 把脚本放置到启动目录下, 执行如下指令，在这里90表明一个优先级，越高表示执行的越晚
+sudo mv new_service.sh /etc/init.d/
+
+4. 将脚本添加到启动脚本
+cd /etc/init.d/  
+sudo update-rc.d new_service.sh defaults 90  
+
+如何测试:
+
+cd到/etc/init.d/目录下,手动启动:
+./new_service.sh
+如果手动能启动那就说明编写的new_service.sh脚本没有问题,如有问题,可以查看日志:
+cat /var/log/boot.log
+
+如何启动时间很长,那就修改default的值,如:
+ sudo update-rc.d new_service.sh defaults 2
+
+
+如何移除脚本:
+sudo update-rc.d -f new_service.sh remove 
+
+参考链接:
+http://www.cnblogs.com/EasonJim/p/7573292.html
+
+最简单的方法如下: fuck
+
+https://jingyan.baidu.com/article/ce09321b63893c2bfe858f72.html
+
+
+
+
+画图：http://Draw.io
+
+思维导图Xmind
+
+远程控制:TeamViewer
+
+
+
+Git:
+
+搜索
+
+从当前目录的所有文件中查找文本内容：
+
+$ git grep "Hello"
+
+在某一版本中搜索文本：
+
+$ git grep "Hello" v2.5
+
+提交历史
+
+从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：
+
+$ git log
+
+显示所有提交（仅显示提交的hash和message）：
+
+$ git log --oneline
+
+显示某个用户的所有提交：
+
+$ git log --author="username"
+
+显示某个文件的所有修改：
+
+$ git log -p <file>
+
+谁，在什么时间，修改了文件的什么内容：
+
+$ git blame <file>
+
+
+
+Genymotion模拟器的安装(个人免费版)
+
+下载Genymotion
+
+1.点击此处访问Genymotion官方下载页面 （个人版是可以免费使用的 Download for Ubuntu (64bit) - 40.95 MB）。
+
+2.根据您的系统类型选择对应的软件包并下载。
+
+安装Genymotion
+
+ 
+
+根据系统类型的不同，安装流程分为以下几种：
+
+ 
+
+Windows
+
+1.双击msi安装程序
+
+2.选择安装程序语言（Genymotion的默认语言为您的系统语言）并点击“下一步”
+
+3.再次点击“下一步”
+
+4.根据实际需要变更安装路径（默认路径为C:\Program Files\Genymobile\Genymotion），然后点击“下一步”
+
+5.再次点击“下一步”
+
+6.选择是否创建桌面图标，然后点击“下一步”
+
+7.点击“安装”
+
+8.点击“完成”
+
+ 
+
+MacOS X
+
+1.打开dmg安装程序
+
+2.将Genymotion与Genymotion shell拖动至Application目录
+
+ 
+
+Linux
+
+在终端输入：
+
+chmod +x [InstallerPath]/genymotion.bin
+
+[InstallerPath]/genymotion.bin
+
+参考链接: http://justcode.ikeepstudying.com/2016/03/android%E6%A8%A1%E6%8B%9F%E5%99%A8genymotion%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/
+
+https://docs.genymotion.com/latest/pdf/PDF_User_Guide/Genymotion-2.12-User-Guide.pdf
+
+
+
+Linux系统安装genymotion以及安装好无法启动的问题:
+解决方法参考:
+1. https://stackoverflow.com/questions/39322338/ubuntu-16-04-genymotion-dev-hw-random-not-found?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+2. https://bbs.deepin.org/forum.php?mod=viewthread&tid=146459
+
+3. react-native run-android 正常启动, genymotion正常启动,但出现了无法连接 sever的错误,原因是network的问题,解决办法:
+sudo ifconfig vboxnet2 up 
+vboxnet2需要到vbox里面网络中设置查看到底是vboxnet0 还是vboxnet1 或者是vboxnet2
+
+genymotion 查看日志:
+
+所有机型的日志都在 : $HOME/.Genymobile/Genymotion/deployed/<virtual device
+name>/ 下面
+
+
+
+
+
+
+
+ubuntu系统死机解决办法: 进入tty
+
+ctrl + alt + f1进入tty1字符界面
+输入用户名和密码登录,然后用top命令找到导致死的软件进程
+通过kill pid命令结束掉
+然后
+ctrl + alt + f7 回到桌面看看是否能恢复
+参考链接:https://www.jianshu.com/p/36fb9eed82a3
+
+
+
+Sublime text 3
+React Native开发推荐的一些插件：
+
+ReactJS : 支持React开发，代码提示，高亮显示
+
+react-native-snippets：
+  react-native的代码快速构建模板
+  https://github.com/Shrugs/react-native-snippets
+  例如：输入cdm，就会自动补全componentDidMount(),输入rnList，就会自动补全相应标签等
+
+Babel:
+  支持ES6， React.js, jsx代码高亮
+  https://github.com/babel/babel-sublime
+  打开.js, .jsx 后缀的文件后，点击菜单View -> Syntax -> Open all with current extension as... -> Babel -> JavaScript (Babel)
+
+
+
+vscode 快捷键:
+
+通用快捷键
+  快捷键	作用
+  Ctrl+Shift+P,F1	展示全局命令面板
+  Ctrl+P	快速打开最近打开的文件
+  Ctrl+Shift+N	打开新的编辑器窗口
+  Ctrl+Shift+W	关闭编辑器
+
+基础编辑
+  快捷键	作用
+  Ctrl + X	剪切
+  Ctrl + C	复制
+  Alt + up/down	移动行上下
+  Shift + Alt up/down	在当前行上下复制当前行
+  Ctrl + Shift + K	删除行
+  Ctrl + Enter	在当前行下插入新的一行
+  Ctrl + Shift + Enter	在当前行上插入新的一行
+  Ctrl + Shift + | 匹配花括号的闭合处，跳转	
+  Ctrl + ] / [	行缩进
+  Home	光标跳转到行头
+  End	光标跳转到行尾
+  Ctrl + Home	跳转到页头
+  Ctrl + End	跳转到页尾
+  Ctrl + up/down	行视图上下偏移
+  Alt + PgUp/PgDown	屏视图上下偏移
+  Ctrl + Shift + [	折叠区域代码
+  Ctrl + Shift + ]	展开区域代码
+  Ctrl + K Ctrl + [	折叠所有子区域代码
+  Ctrl + k Ctrl + ]	展开所有折叠的子区域代码
+  Ctrl + K Ctrl + 0	折叠所有区域代码
+  Ctrl + K Ctrl + J	展开所有折叠区域代码
+  Ctrl + K Ctrl + C	添加行注释
+  Ctrl + K Ctrl + U	删除行注释
+  Ctrl + /	添加关闭行注释
+  Shift + Alt +A	块区域注释
+  Alt + Z	添加关闭词汇包含
+
+导航
+  快捷键	作用
+  Ctrl + T	列出所有符号
+  Ctrl + G	跳转行
+  Ctrl + P	跳转文件
+  Ctrl + Shift + O	跳转到符号处
+  Ctrl + Shift + M	打开问题展示面板
+  F8	跳转到下一个错误或者警告
+  Shift + F8	跳转到上一个错误或者警告
+  Ctrl + Shift + Tab	切换到最近打开的文件
+  Alt + left / right	向后、向前
+  Ctrl + M	进入用Tab来移动焦点
+
+
+查询与替换
+  快捷键	作用
+  Ctrl + F	查询
+  Ctrl + H	替换
+  F3 / Shift + F3	查询下一个/上一个
+  Alt + Enter	选中所有出现在查询中的
+  Ctrl + D	匹配当前选中的词汇或者行，再次选中-可操作
+  Ctrl + K Ctrl + D	移动当前选择到下个匹配选择的位置(光标选定)
+  Alt + C / R / W	
+
+多行光标操作于选择
+  快捷键	作用
+  Alt + Click	插入光标-支持多个
+  Ctrl + Alt + up/down	上下插入光标-支持多个
+  Ctrl + U	撤销最后一次光标操作
+  Shift + Alt + I	插入光标到选中范围内所有行结束符
+  Ctrl + I	选中当前行
+  Ctrl + Shift + L	选择所有出现在当前选中的行-操作
+  Ctrl + F2	选择所有出现在当前选中的词汇-操作
+  Shift + Alt + right	从光标处扩展选中全行
+  Shift + Alt + left	收缩选择区域
+  Shift + Alt + (drag mouse)	鼠标拖动区域，同时在多个行结束符插入光标
+  Ctrl + Shift + Alt + (Arrow Key)	也是插入多行光标的[方向键控制]
+  Ctrl + Shift + Alt + PgUp/PgDown	也是插入多行光标的[整屏生效]
+
+丰富的语言操作
+  快捷键	作用
+  Ctrl + Space	输入建议[智能提示]
+  Ctrl + Shift + Space	参数提示
+  Tab	Emmet指令触发/缩进
+  Shift + Alt + F	格式化代码
+  Ctrl + K Ctrl + F	格式化选中部分的代码
+  F12	跳转到定义处
+  Alt + F12	代码片段显示定义
+  Ctrl + K F12	在其他窗口打开定义处
+  Ctrl + .	快速修复部分可以修复的语法错误
+  Shift + F12	显示所有引用
+  F2	重命名符号
+  Ctrl + Shift + . / ,	替换下个值
+  Ctrl + K Ctrl + X	移除空白字符
+  Ctrl + K M	更改页面文档格式
+
+编辑器管理
+  快捷键	作用
+  Ctrl + F4, Ctrl + W	关闭编辑器
+  Ctrl + k F	关闭当前打开的文件夹
+  Ctrl + |切割编辑窗口	
+  Ctrl + 1/2/3	切换焦点在不同的切割窗口
+  Ctrl + K Ctrl <-/->	切换焦点在不同的切割窗口
+  Ctrl + Shift + PgUp/PgDown	切换标签页的位置
+  Ctrl + K <-/->	切割窗口位置调换
+
+文件管理
+  快捷键	作用
+  Ctrl + N	新建文件
+  Ctrl + O	打开文件
+  Ctrl + S	保存文件
+  Ctrl + Shift + S	另存为
+  Ctrl + K S	保存所有当前已经打开的文件
+  Ctrl + F4	关闭当前编辑窗口
+  Ctrl + K Ctrl + W	关闭所有编辑窗口
+  Ctrl + Shift + T	撤销最近关闭的一个文件编辑窗口
+  Ctrl + K Enter	保持开启
+  Ctrl + Shift + Tab	调出最近打开的文件列表，重复按会切换
+  Ctrl + Tab	与上面一致，顺序不一致
+  Ctrl + K P	复制当前打开文件的存放路径
+  Ctrl + K R	打开当前编辑文件存放位置【文件管理器】
+  Ctrl + K O	在新的编辑器中打开当前编辑的文件
+
+显示
+  快捷键	作用
+  F11	切换全屏模式
+  Shift + Alt + 1	切换编辑布局【目前无效】
+  Ctrl + =/-	放大 / 缩小
+  Ctrl + B	侧边栏显示隐藏
+  Ctrl + Shift + E	资源视图和编辑视图的焦点切换
+  Ctrl + Shift + F	打开全局搜索
+  Ctrl + Shift + G	打开Git可视管理
+  Ctrl + Shift + D	打开DeBug面板
+  Ctrl + Shift + X	打开插件市场面板
+  Ctrl + Shift + H	在当前文件替换查询替换
+  Ctrl + Shift + J	开启详细查询
+  Ctrl + Shift + V	预览Markdown文件【编译后】
+  Ctrl + K v	在边栏打开渲染后的视图【新建】
+
+调试
+  快捷键	作用
+  F9	添加解除断点
+  F5	启动调试、继续
+  F11 / Shift + F11	单步进入 / 单步跳出
+  F10	单步跳过
+  Ctrl + K Ctrl + I	显示悬浮
+
+集成终端
+  快捷键	作用
+  Ctrl + `	打开集成终端
+  Ctrl + Shift + `	创建一个新的终端
+  Ctrl + Shift + C	复制所选
+  Ctrl + Shift + V	复制到当前激活的终端
+  Shift + PgUp / PgDown	页面上下翻屏
+  Ctrl + Home / End	滚动到页面头部或尾部
+
+react native plug in vscode
+  1. 路径补全　Path Intellisense
+  2. Auto Close Tag （自动关闭HTML标签）
+  3. Auto Rename Tag (HTML标签自动改名)
+  4. Babel ES6/ES7 
+  5. npm Intellisense (提示可以require的模块名称)
+  6. Reactjs code snippets (reactjs代码提示)
+  7. CSS Modules(对使用了css modules的jsx标签的类名补全和跳转到定义位置)
+
+
+ubuntu install tree 
+  1、sudo apt-get -y install tree
+  2、使用方法：
+    (1) 显示当前目录的树形结构
+      jianbao@jianbao-pc:/www/软件开发$ tree
+      .
+      ├── PPT
+      │   └── PHP性能监控与优化.pptx
+      ├── 电子书
+      │   ├── Linux.环境C程序设计.徐诚.扫描版.pdf
+      │   └── UNIX环境高级编程（中文第三版）_扫描版.pdf
+      ├── 视频
+      │   └── PHP_C扩展
+      │       ├── PHP扩展开发教程.mp4
+      │       ├── swoole第三节第4部分.mp4
+      │       ├── swoole视频教程第3节 swoole服务器的进程_线程模型.mp4
+      │       └── 其他
+      │           ├── swoole-chat第二节第二部分.mp4
+      │           ├── swoole-chat第二节第三部分.mp4
+      └── 手册
+          └── php_enhanced_zh.chm
+    (2) 只查看当前第一级的目录和文件
+      $ tree -L 1
+    (3) 只查看当前第二级的目录和文件
+      $ tree -L 2
+    (4) 只查看当前第N级的目录和文件
+      $ tree -L N
+    (5) 把目录结构信息保存到文本中
+      $ tree -L 2 > /home/php-note.com/tree.txt
+
+SHELL键盘高级操作技巧（shell常用命令 
+  1、移动光标
+    按键	      行动
+    Ctrl-a	    移动光标到行首。
+    Ctrl-e	    移动光标到行尾。
+    Ctrl-f	    光标前移一个字符；和右箭头作用一样。
+    Ctrl-b	    光标后移一个字符；和左箭头作用一样。
+    Alt- f	    光标前移一个字。
+    Alt- b	    光标后移一个字。
+    Ctrl-l	    清空屏幕，移动光标到左上角。clear 命令完成同样的工作。
