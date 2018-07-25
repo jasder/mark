@@ -111,3 +111,13 @@ react native  导航
 
 app icon
 	链接 http://iconfont.cn/collections/detail?spm=a313x.7781069.1998910419.d9df05512&cid=8928
+
+
+React Native遇到的一些报错信息及解决方案, example:
+	https://blog.csdn.net/chaoyangsun/article/details/77007725
+
+	example:
+
+	Loading dependency graph...(node:13955) UnhandledPromiseRejectionWarning: Error: ENOSPC: no space left on device, watch '/home/jason/work/plug/AwesomeProject'
+
+	answer => https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details	
