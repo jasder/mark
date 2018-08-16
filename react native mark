@@ -121,3 +121,17 @@ React Native遇到的一些报错信息及解决方案, example:
 	Loading dependency graph...(node:13955) UnhandledPromiseRejectionWarning: Error: ENOSPC: no space left on device, watch '/home/jason/work/plug/AwesomeProject'
 
 	answer => https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details	
+
+
+
+Android 通知权限弹出框
+	https://blog.csdn.net/weixin_30512027/article/details/80859934
+	https://blog.csdn.net/ysy950803/article/details/71910806/
+	https://blog.csdn.net/u011928958/article/details/72780438/
+
+	https://blog.csdn.net/xiaoyu_93/article/details/52982657
+	https://www.cnblogs.com/huolan/p/5142579.html
+	https://blog.csdn.net/xushunag/article/details/78545463
+	https://www.jb51.net/article/131546.htm
+	https://blog.csdn.net/u011993368/article/details/45888811
+	https://blog.csdn.net/hr1992323/article/details/52370163
